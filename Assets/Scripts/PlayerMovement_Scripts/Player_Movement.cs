@@ -15,6 +15,7 @@ public class Player_Movement : MonoBehaviour, IDragHandler
     float JumpEndTime = -500f;
     void Awake()
     {
+        Debug.Log("test");
         On_Drag = false;
         LimitX = 5.5f;
         Player_rb = Player.GetComponent<Rigidbody>();
