@@ -49,11 +49,6 @@ public class Archer_Attack_Management : MonoBehaviour {
         Explode_Shot = new Explode_Trap_Shot(Bolt, Shot_Spawn, gameObject, LazerShot_Lev,Explode);
 
     }
-	// Use this for initialization
-	void Start () {
-
-    }
-	
 	// Update is called once per frame
     void FixedUpdate () 
     {
@@ -88,20 +83,22 @@ public class Archer_Attack_Management : MonoBehaviour {
         }
     }
     
+
+
+
+    //지금 하고있는 작엄 : 최대한 OPP의 컨셉에 맞춰서 코드 정리하기
     void Guided_Shot()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log("유도샷");
-            int idx = Guided.Set_Target();
-            GameObject[] Bolt = new GameObject[GuidedShot_Lev];
-            Bolt = Guided.Generate_Bolt(idx);
+            //GameObject[] Bolt = new GameObject[GuidedShot_Lev];
+            Guided.Generate_Bolt();
 
             for (int i = 0; i < GuidedShot_Lev; i++)
             {
-                Bolt_Management Attribute = Bolt[i].GetComponent<Bolt_Management>();
-                Attribute.Bolt_attribute = "Guided";
-                StartCoroutine(Guided.GuidedShot_(Bolt[i], idx, Bolt));
+                //Bolt_Management Attribute = Bolt[i].GetComponent<Bolt_Management>();
+                //Attribute.Bolt_attribute = "Guided";
+                StartCoroutine(Guided.GuidedShot_(i));
             }
         }
     }

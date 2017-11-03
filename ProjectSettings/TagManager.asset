@@ -8,6 +8,8 @@ TagManager:
   - Target
   - Enemy
   - Map
+  - New
+  - Resource
   layers:
   - Default
   - TransparentFX

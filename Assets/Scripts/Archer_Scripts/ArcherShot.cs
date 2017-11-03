@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
+﻿using UnityEngine;
 
+
+//기본적인 궁수의 공격을 위한 추상클레스
 public abstract class ArcherShot
 {
     public GameObject Bolt;//탄알 가져오기
