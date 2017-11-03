@@ -34,7 +34,7 @@ public class Player_Movement : MonoBehaviour, IDragHandler
             }
             else
             {
-                Player.transform.Translate(new Vector3(Mathf.Min(data.delta.x,3.5f) * Power, 0, 0));
+                Player.transform.Translate(new Vector3(Mathf.Min(data.delta.x,3f) * Power, 0, 0));
                 //하기
             }
         }
@@ -48,7 +48,7 @@ public class Player_Movement : MonoBehaviour, IDragHandler
             }
             else
             {
-                Player.transform.Translate(new Vector3(Mathf.Max(data.delta.x, -3.5f) * Power, 0, 0));
+                Player.transform.Translate(new Vector3(Mathf.Max(data.delta.x, -3f) * Power, 0, 0));
                 //하기
             }
         }
