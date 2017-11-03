@@ -91,14 +91,16 @@ public class Archer_Attack_Management : MonoBehaviour {
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            //GameObject[] Bolt = new GameObject[GuidedShot_Lev];
-            Guided.Generate_Bolt();
+            Debug.Log("유도샷");
+            int idx = Guided.Set_Target();
+            GameObject[] Bolt = new GameObject[GuidedShot_Lev];
+            Bolt = Guided.Generate_Bolt(idx);
 
             for (int i = 0; i < GuidedShot_Lev; i++)
             {
-                //Bolt_Management Attribute = Bolt[i].GetComponent<Bolt_Management>();
-                //Attribute.Bolt_attribute = "Guided";
-                StartCoroutine(Guided.GuidedShot_(i));
+                Bolt_Management Attribute = Bolt[i].GetComponent<Bolt_Management>();
+                Attribute.Bolt_attribute = "Guided";
+                StartCoroutine(Guided.GuidedShot_(Bolt[i], idx, Bolt));
             }
         }
     }
