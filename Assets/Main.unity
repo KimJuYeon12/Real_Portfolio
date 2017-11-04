@@ -429,9 +429,10 @@ GameObject:
   - component: {fileID: 169773758}
   - component: {fileID: 169773757}
   - component: {fileID: 169773756}
+  - component: {fileID: 169773762}
   m_Layer: 0
   m_Name: MoveDown (2)
-  m_TagString: Enemy
+  m_TagString: Bolt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -523,12 +524,24 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 169773755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.42, y: 1.81, z: 9.58}
+  m_LocalPosition: {x: -0.42, y: 1.23, z: 15.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &169773762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 169773755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e1a2670125ea13429d391beb7dc4cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &181686914
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,7 +1009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 428642243}
   - component: {fileID: 428642244}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1043,10 +1056,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0, g: 1, b: 0.2965517, a: 1}
-    m_HighlightedColor: {r: 0.034482718, g: 1, b: 0, a: 1}
-    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
-    m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
-    m_ColorMultiplier: 5
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -1079,7 +1092,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 501713283}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1244,6 +1257,19 @@ GameObject:
   m_PrefabParentObject: {fileID: 1906273113966224, guid: c975d297b210e85429dc5381fe540c6b,
     type: 2}
   m_PrefabInternal: {fileID: 1536235678}
+--- !u!114 &747593968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 747593962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0fa957ce476264f8426591b8ca02b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player_Slider: {fileID: 428642244}
+  CurrentHP_color: {fileID: 805527262}
 --- !u!1 &773568136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1319,7 +1345,7 @@ GameObject:
   - component: {fileID: 805527261}
   - component: {fileID: 805527263}
   - component: {fileID: 805527262}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1388,7 +1414,7 @@ GameObject:
   - component: {fileID: 869521301}
   - component: {fileID: 869521300}
   - component: {fileID: 869521299}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1402,7 +1428,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 869521297}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.007862091, y: 0, z: -0.69}
+  m_LocalPosition: {x: 0.007862091, y: 0.5099983, z: -0.34}
   m_LocalScale: {x: 0.010144948, y: 0.0033216395, z: 1}
   m_Children:
   - {fileID: 428642243}
@@ -1411,7 +1437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0078624, y: 0}
+  m_AnchoredPosition: {x: 0.0078624, y: 0.51}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &869521299
@@ -1726,9 +1752,10 @@ GameObject:
   - component: {fileID: 1011256641}
   - component: {fileID: 1011256640}
   - component: {fileID: 1011256639}
+  - component: {fileID: 1011256645}
   m_Layer: 0
   m_Name: MoveDown (3)
-  m_TagString: Enemy
+  m_TagString: Bolt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1820,12 +1847,24 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1011256638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.34, y: 1.81, z: 9.58}
+  m_LocalPosition: {x: -2.34, y: 1.23, z: 15.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1011256645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1011256638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e1a2670125ea13429d391beb7dc4cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1062931451
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,9 +2284,10 @@ GameObject:
   - component: {fileID: 1285416627}
   - component: {fileID: 1285416626}
   - component: {fileID: 1285416625}
+  - component: {fileID: 1285416631}
   m_Layer: 0
   m_Name: MoveDown (1)
-  m_TagString: Enemy
+  m_TagString: Bolt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2339,12 +2379,24 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1285416624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.59, y: 1.81, z: 9.58}
+  m_LocalPosition: {x: 1.59, y: 1.23, z: 15.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1285416631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1285416624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e1a2670125ea13429d391beb7dc4cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1327132028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,9 +2510,10 @@ GameObject:
   - component: {fileID: 1411880198}
   - component: {fileID: 1411880202}
   - component: {fileID: 1411880203}
+  - component: {fileID: 1411880204}
   m_Layer: 0
   m_Name: MoveDown
-  m_TagString: Enemy
+  m_TagString: Bolt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2525,7 +2578,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1411880197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3, y: 1.81, z: 9.58}
+  m_LocalPosition: {x: -1.3, y: 1.23, z: 15.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2558,6 +2611,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Is_Velocity: 0
+--- !u!114 &1411880204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1411880197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e1a2670125ea13429d391beb7dc4cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &1470467093 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1086905074614004, guid: 027aabb74cc28ea40b03e476b0f3639a,
@@ -2683,7 +2748,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4453524231858754, guid: c975d297b210e85429dc5381fe540c6b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.45
+      value: -1.65
       objectReference: {fileID: 0}
     - target: {fileID: 4453524231858754, guid: c975d297b210e85429dc5381fe540c6b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2712,6 +2777,28 @@ Prefab:
     - target: {fileID: 4453524231858754, guid: c975d297b210e85429dc5381fe540c6b, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 65604855831074112, guid: c975d297b210e85429dc5381fe540c6b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65604855831074112, guid: c975d297b210e85429dc5381fe540c6b,
+        type: 2}
+      propertyPath: m_Size.y
+      value: -1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453524231858754, guid: c975d297b210e85429dc5381fe540c6b, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310244885912890, guid: c975d297b210e85429dc5381fe540c6b, type: 2}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1084341853163496, guid: c975d297b210e85429dc5381fe540c6b, type: 2}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c975d297b210e85429dc5381fe540c6b, type: 2}
@@ -2826,7 +2913,7 @@ GameObject:
   - component: {fileID: 1707693788}
   - component: {fileID: 1707693790}
   - component: {fileID: 1707693789}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2997,9 +3084,10 @@ GameObject:
   - component: {fileID: 1799374044}
   - component: {fileID: 1799374043}
   - component: {fileID: 1799374042}
+  - component: {fileID: 1799374048}
   m_Layer: 0
   m_Name: MoveDown (4)
-  m_TagString: Enemy
+  m_TagString: Bolt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3091,12 +3179,24 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1799374041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.65, y: 1.81, z: 9.58}
+  m_LocalPosition: {x: 0.65, y: 1.23, z: 15.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1799374048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1799374041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e1a2670125ea13429d391beb7dc4cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &1822011838
 GameObject:
   m_ObjectHideFlags: 0

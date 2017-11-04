@@ -5,9 +5,6 @@ using UnityEngine.EventSystems;
 public class Player_Movement : MonoBehaviour, IDragHandler
 {
     private int  Layermask = 1 << 9;
-    /// <summary>
-    /// /////////////////////////////////
-    /// </summary>
     public GameObject Player;
     Rigidbody Player_rb;
     float LimitX;
