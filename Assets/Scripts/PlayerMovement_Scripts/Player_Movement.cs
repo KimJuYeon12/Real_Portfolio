@@ -4,9 +4,6 @@ using UnityEngine.EventSystems;
 
 public class Player_Movement : MonoBehaviour, IDragHandler
 {
-
-    private RaycastHit R_Hit = new RaycastHit();
-    private RaycastHit L_Hit = new RaycastHit();
     private int  Layermask = 1 << 9;
     /// <summary>
     /// /////////////////////////////////
@@ -20,6 +17,8 @@ public class Player_Movement : MonoBehaviour, IDragHandler
     public static bool CanJump = true;
     float JumpStartTime;
     float JumpEndTime = -500f;
+    private Ray rightRay;
+    private Ray leftRay;
     void Awake()
     {
         //Layermask = ~Layermask;
@@ -27,40 +26,31 @@ public class Player_Movement : MonoBehaviour, IDragHandler
         On_Drag = false;
         LimitX = 5.5f;
         Player_rb = Player.GetComponent<Rigidbody>();
+        
     }
     public void OnDrag(PointerEventData data)
     {
        On_Drag = true;
-
         if (data.delta.x > 0)//오른쪽
         {
-            Ray rightRay = new Ray(Player.transform.position, Vector3.right);
-            
-
-            if (Physics.Raycast(rightRay,out R_Hit ,0.5f, Layermask) && R_Hit.collider.tag != "Player")
+            rightRay = new Ray(Player.transform.position, Vector3.right);
+            if (Physics.Raycast(rightRay, 0.5f))//,Layermask))
             {
                 return;
             }
-            else
-            {
-                Player.transform.Translate(new Vector3(Mathf.Min(data.delta.x,3f) * Power, 0, 0));
-                //하기
-            }
+            Player.transform.Translate(new Vector3(Mathf.Min(data.delta.x,3f) * Power, 0, 0));
+            
         }
         else// 왼쪽
         {
-            Ray leftRay = new Ray(Player.transform.position, Vector3.left);
-            // 왼쪽
-            if (Physics.Raycast(leftRay,out L_Hit, 0.5f, Layermask) && L_Hit.transform.tag != "Player")
+            leftRay = new Ray(Player.transform.position, Vector3.left);
+            if (Physics.Raycast(leftRay,0.5f))//, Layermask))
             {
                 return;
             }
-            else
-            {
-                Player.transform.Translate(new Vector3(Mathf.Max(data.delta.x, -3f) * Power, 0, 0));
-                //하기
-            }
+            Player.transform.Translate(new Vector3(Mathf.Max(data.delta.x, -3f) * Power, 0, 0));
         }
+
         if (Mathf.Abs(Player_rb.position.x) <= LimitX) return;
         My_Clamp();
     }
