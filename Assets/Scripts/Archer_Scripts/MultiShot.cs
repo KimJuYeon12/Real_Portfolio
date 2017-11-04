@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class MultiShot : ArcherShot
@@ -20,18 +18,20 @@ public class MultiShot : ArcherShot
 
     public override void Shot()
     {
-        Debug.Log("멀티샷");
-        Shot_Spawn.transform.SetPositionAndRotation(Shot_Spawn.transform.position, Quaternion.Euler(0, 0, 0));
+        //초기각을 0도로 설정
+        Shot_Spawn.transform.rotation = Quaternion.Euler(Vector3.zero);
+
+        //0도를 기준으로 총알이 나가는 총 각도 범위의 반틈만큼 총구를 회전시킨다.
         Shot_Spawn.transform.Rotate(Setting_Angle);
 
+        //루프를 돌면서 총알을 생성
         for (int i = 0; i < Shot_Level; i++)
         {
+            //총알을 생성해서 초기 위치를 설정
             MonoBehaviour.Instantiate(Bolt, Shot_Spawn_Point.transform.position, Shot_Spawn.transform.rotation);
             Shot_Spawn.transform.Rotate(new Vector3(0, Angle, 0));
 
         }
-        Shot_Spawn.transform.SetPositionAndRotation(Shot_Spawn.transform.position, Quaternion.Euler(0, 0, 0));
-        //각도의 값을 초기화해주기 위해서 사용
     }
 
 }

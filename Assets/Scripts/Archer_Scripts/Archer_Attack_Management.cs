@@ -52,7 +52,7 @@ public class Archer_Attack_Management : MonoBehaviour {
 	// Update is called once per frame
     void FixedUpdate () 
     {
-        Guided_Shot();
+        Mul_Shot();
     }
 
 
