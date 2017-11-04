@@ -52,7 +52,7 @@ public class Archer_Attack_Management : MonoBehaviour {
 	// Update is called once per frame
     void FixedUpdate () 
     {
-        Mul_Shot();
+        Lazer_Shot_();
     }
 
 
@@ -66,9 +66,11 @@ public class Archer_Attack_Management : MonoBehaviour {
     }
 
 
+
+
     void Lazer_Shot_()
     {
-        if (Input.GetButtonDown("Fire1") && Layzer_Trap_Shot.Is_Lazer == false)
+        if (Input.GetButtonDown("Fire1") && Lazer_Shot.Is_Lazer == false)
         {
             StartCoroutine(Lazer_Shot.Set_Lazer());
         }
