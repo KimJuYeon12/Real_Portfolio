@@ -82,20 +82,30 @@ public class Archer_Attack_Management : MonoBehaviour {
             Mul.Shot();
         }
     }
-    
+
 
 
 
     //지금 하고있는 작엄 : 최대한 OPP의 컨셉에 맞춰서 코드 정리하기
+    //유도샷은 코루틴을 사용
+    //코루틴이 돌기전에 사전에 세팅되어야 할 부분들이 있기 때문에 유도샷의 구현클레스 내부에
+    //코루틴을 제외한 나머지 부분을 모두 넣을 수 없었다.
     void Guided_Shot()
     {
+        
         if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log("유도샷");
+            //타겟을 설정하고 해당타겟의 인덱스를 받아옴
+            //인덱스를 가이드 클레스 내부에 만들어버리면 플레이어가 움직일 때 이미 발사된
+            //탄알도 같이 움직여져버리므로 밖에서 따로 선언 후 받아와서 아래에서 사용한다.
             int idx = Guided.Set_Target();
+
+            //탄알을 생성
             GameObject[] Bolt = new GameObject[GuidedShot_Lev];
             Bolt = Guided.Generate_Bolt(idx);
 
+
+            //생성된 탄알의 갯수만큼 루프를 돌면서 탄알을 발사한다.
             for (int i = 0; i < GuidedShot_Lev; i++)
             {
                 Bolt_Management Attribute = Bolt[i].GetComponent<Bolt_Management>();
