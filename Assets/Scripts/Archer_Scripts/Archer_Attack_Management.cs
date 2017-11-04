@@ -52,15 +52,16 @@ public class Archer_Attack_Management : MonoBehaviour {
 	// Update is called once per frame
     void FixedUpdate () 
     {
-        Lazer_Shot_();
+        Explode_Shot_();
     }
 
 
 
     void Explode_Shot_()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && Explode_Damage.Is_Active == false)
         {
+            Explode_Damage.Is_Active = true;
             Explode_Shot.Shot();
         }
     }

@@ -3,7 +3,7 @@
 public class Explode_Trap_Shot : ArcherShot
 {
     private GameObject Explode_Trap;
-
+    public bool Is_Active = false;
 
     public Explode_Trap_Shot(GameObject Bolt, GameObject Shot_Spawn, GameObject Shot_Spawn_Point, int Shot_Level,GameObject Explode_Trap) 
     : base(Bolt,Shot_Spawn, Shot_Spawn_Point,Shot_Level)
