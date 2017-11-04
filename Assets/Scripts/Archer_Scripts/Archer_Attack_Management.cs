@@ -67,8 +67,6 @@ public class Archer_Attack_Management : MonoBehaviour {
 
 
 
-
-
     void Lazer_Shot_()
     {
         if (Input.GetButtonDown("Fire1") && Lazer_Shot.Is_Lazer == false)

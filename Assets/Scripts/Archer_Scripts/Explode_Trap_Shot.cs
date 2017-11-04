@@ -1,10 +1,8 @@
-﻿
-using UnityEngine;
-
+﻿using UnityEngine;
 
 public class Explode_Trap_Shot : ArcherShot
 {
-    GameObject Explode_Trap;
+    private GameObject Explode_Trap;
 
 
     public Explode_Trap_Shot(GameObject Bolt, GameObject Shot_Spawn, GameObject Shot_Spawn_Point, int Shot_Level,GameObject Explode_Trap) 
@@ -17,6 +15,8 @@ public class Explode_Trap_Shot : ArcherShot
 
     public override void Shot()
     {
+        //트랩을 생성
+        //트랩의 실질적인 작동은 트랩의 프리팹에 달린 스크립트에서 처리한다.
         MonoBehaviour.Instantiate(Explode_Trap, Shot_Spawn_Point.transform.position, Shot_Spawn_Point.transform.rotation);
     }
 
