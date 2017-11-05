@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class Player_Movement : MonoBehaviour, IDragHandler
 {
-    private int  Layermask = 1 << 9;
+    //private int  Layermask = 1 << 9;
     public GameObject Player;
     Rigidbody Player_rb;
     float LimitX;
@@ -18,8 +18,7 @@ public class Player_Movement : MonoBehaviour, IDragHandler
     private Ray leftRay;
     void Awake()
     {
-        //Layermask = ~Layermask;
-        Debug.Log("test");
+        
         On_Drag = false;
         LimitX = 5.5f;
         Player_rb = Player.GetComponent<Rigidbody>();
@@ -27,11 +26,13 @@ public class Player_Movement : MonoBehaviour, IDragHandler
     }
     public void OnDrag(PointerEventData data)
     {
-       On_Drag = true;
+        int Layermask = 1 << 11;
+        //Layermask = ~Layermask;
+        On_Drag = true;
         if (data.delta.x > 0)//오른쪽
         {
             rightRay = new Ray(Player.transform.position, Vector3.right);
-            if (Physics.Raycast(rightRay, 0.5f))//,Layermask))
+            if (Physics.Raycast(rightRay, 0.5f ,Layermask))
             {
                 return;
             }
@@ -41,7 +42,7 @@ public class Player_Movement : MonoBehaviour, IDragHandler
         else// 왼쪽
         {
             leftRay = new Ray(Player.transform.position, Vector3.left);
-            if (Physics.Raycast(leftRay,0.5f))//, Layermask))
+            if (Physics.Raycast(leftRay,0.5f, Layermask))
             {
                 return;
             }
