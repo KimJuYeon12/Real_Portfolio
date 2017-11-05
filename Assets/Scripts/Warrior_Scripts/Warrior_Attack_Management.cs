@@ -66,24 +66,37 @@ public class Warrior_Attack_Management : MonoBehaviour
 
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void FixedUpdate ()
+    {
+
+    }
+
+    
+    void JumpShot()
+    {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            StartCoroutine(jump_Attack.Shot());
+        }
+    }
+
+
+    void WheelWindShot()
     {
         if (Input.GetButtonDown("Fire1"))
         {
             StartCoroutine(WheelWind.Swing_());
-            
         }
+    }
 
 
-        Grab.Fire();//그랩샷
-        //normal_Swing();
-        //Knock_Back();
+    void GrabShot()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Grab.Fire();//그랩샷
+        }
     }
 
 
@@ -91,8 +104,6 @@ public class Warrior_Attack_Management : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if (KB == null) Debug.Log("null");
-            Debug.Log("넉백");
             Knock_back_col.enabled = true;
             StartCoroutine(KB.Knock_back_());
 

@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class Player_Movement : MonoBehaviour, IDragHandler
 {
-    //private int  Layermask = 1 << 9;
+    private int Layermask = 1 << 11;
     public GameObject Player;
     Rigidbody Player_rb;
     float LimitX;
@@ -26,8 +26,6 @@ public class Player_Movement : MonoBehaviour, IDragHandler
     }
     public void OnDrag(PointerEventData data)
     {
-        int Layermask = 1 << 11;
-        //Layermask = ~Layermask;
         On_Drag = true;
         if (data.delta.x > 0)//오른쪽
         {
