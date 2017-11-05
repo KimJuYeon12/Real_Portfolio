@@ -69,7 +69,7 @@ public class Warrior_Attack_Management : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-
+        Grab.Fire();//그랩샷
     }
 
     
@@ -89,11 +89,9 @@ public class Warrior_Attack_Management : MonoBehaviour
             StartCoroutine(WheelWind.Swing_());
         }
     }
-
-
     void GrabShot()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire2"))
         {
             Grab.Fire();//그랩샷
         }
